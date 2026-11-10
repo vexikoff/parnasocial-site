@@ -1146,6 +1146,8 @@ html[data-theme="1"] {
         }
     }
 
+
+
     .header {
         background: rgb(16 16 16 / 0.62) !important;
 
@@ -1159,6 +1161,8 @@ html[data-theme="1"] {
                 background-color: #323232 !important;
             }
         }
+
+
     }
 
     .main {
@@ -1297,6 +1301,140 @@ html[data-theme="1"] {
                     background-color: #1f1f1f;
                     &:hover {
                         background-color: #303030;
+                    }
+                }
+
+                @media (max-width: 760px) {
+                    .header {
+                        .right {
+                            margin-right: 8px;
+                        }
+                    }
+
+                    .main {
+                        overflow-x: hidden;
+                        overflow-y: auto;
+                        flex-direction: column;
+
+                        > .center {
+                            order: 0;
+                            flex: 0 0 auto;
+                            height: auto;
+                            min-height: 280px;
+                            min-width: 0;
+                        }
+
+                        > .left {
+                            order: 1;
+                            flex: 0 0 220px;
+                            height: auto;
+                            min-height: 180px;
+                            min-width: 0;
+                        }
+
+                        > .right {
+                            order: 2;
+                            flex: 0 0 220px;
+                            height: auto;
+                            min-height: 180px;
+                            min-width: 0;
+                        }
+                    }
+
+                    .settings {
+                        width: calc(100vw - 32px);
+                        max-width: 720px;
+                        overflow-y: auto;
+
+                        .main {
+                            width: auto;
+                            height: auto;
+                            min-height: 100%;
+
+                            > .row {
+                                flex-wrap: wrap;
+
+                                .lefts,
+                                .rights {
+                                    flex: 1 1 240px;
+                                    min-width: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .header {
+                        .iconp {
+                            min-width: 0;
+
+                            h1 {
+                                white-space: nowrap;
+                            }
+                        }
+
+                        .right {
+                            margin-right: 0;
+                        }
+                    }
+
+                    .main {
+                        padding: 6px;
+                        gap: 6px;
+                        top: 36px;
+
+                        > .center {
+                            min-height: 240px;
+                            padding: 8px 4px;
+
+                            h1 {
+                                font-size: 24px;
+                            }
+
+                            .player {
+                                max-width: 100%;
+                                gap: 16px;
+
+                                .prew {
+                                    max-width: 100%;
+                                }
+
+                                .volumep {
+                                    max-width: 112px;
+                                }
+                            }
+                        }
+
+                        > .left,
+                        > .right {
+                            flex-basis: 200px;
+                            padding: 6px;
+                        }
+                    }
+
+                    .settings {
+                        left: 0;
+                        right: 0;
+                        width: auto;
+                        margin: 6px;
+                        padding: 8px;
+                        box-sizing: border-box;
+
+                        .main {
+                            margin: 0;
+                            padding: 0;
+
+                            > .row {
+                                flex-direction: column;
+                                align-items: stretch !important;
+
+                                .lefts,
+                                .rights {
+                                    flex-basis: auto;
+                                }
+                            }
+                        }
                     }
                 }
             }

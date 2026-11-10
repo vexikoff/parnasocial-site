@@ -1233,5 +1233,112 @@ html[data-theme="1"] .predcont .pred .row button {
 html[data-theme="1"] .predcont .pred .row button:hover {
   background-color: #303030;
 }
+@media (max-width: 760px) {
+  html[data-theme="1"] .predcont .pred .row .header .right {
+    margin-right: 8px;
+  }
+  html[data-theme="1"] .predcont .pred .row .main {
+    overflow-x: hidden;
+    overflow-y: auto;
+    flex-direction: column;
+  }
+  html[data-theme="1"] .predcont .pred .row .main > .center {
+    order: 0;
+    flex: 0 0 auto;
+    height: auto;
+    min-height: 280px;
+    min-width: 0;
+  }
+  html[data-theme="1"] .predcont .pred .row .main > .left {
+    order: 1;
+    flex: 0 0 220px;
+    height: auto;
+    min-height: 180px;
+    min-width: 0;
+  }
+  html[data-theme="1"] .predcont .pred .row .main > .right {
+    order: 2;
+    flex: 0 0 220px;
+    height: auto;
+    min-height: 180px;
+    min-width: 0;
+  }
+  html[data-theme="1"] .predcont .pred .row .settings {
+    width: calc(100vw - 32px);
+    max-width: 720px;
+    overflow-y: auto;
+  }
+  html[data-theme="1"] .predcont .pred .row .settings .main {
+    width: auto;
+    height: auto;
+    min-height: 100%;
+  }
+  html[data-theme="1"] .predcont .pred .row .settings .main > .row {
+    flex-wrap: wrap;
+  }
+  html[data-theme="1"] .predcont .pred .row .settings .main > .row .lefts,
+  html[data-theme="1"] .predcont .pred .row .settings .main > .row .rights {
+    flex: 1 1 240px;
+    min-width: 0;
+  }
+}
+@media (max-width: 480px) {
+  html[data-theme="1"] .predcont .pred .row .header .iconp {
+    min-width: 0;
+  }
+  html[data-theme="1"] .predcont .pred .row .header .iconp h1 {
+    white-space: nowrap;
+  }
+  html[data-theme="1"] .predcont .pred .row .header .right {
+    margin-right: 0;
+  }
+  html[data-theme="1"] .predcont .pred .row .main {
+    padding: 6px;
+    gap: 6px;
+    top: 36px;
+  }
+  html[data-theme="1"] .predcont .pred .row .main > .center {
+    min-height: 240px;
+    padding: 8px 4px;
+  }
+  html[data-theme="1"] .predcont .pred .row .main > .center h1 {
+    font-size: 24px;
+  }
+  html[data-theme="1"] .predcont .pred .row .main > .center .player {
+    max-width: 100%;
+    gap: 16px;
+  }
+  html[data-theme="1"] .predcont .pred .row .main > .center .player .prew {
+    max-width: 100%;
+  }
+  html[data-theme="1"] .predcont .pred .row .main > .center .player .volumep {
+    max-width: 112px;
+  }
+  html[data-theme="1"] .predcont .pred .row .main > .left,
+  html[data-theme="1"] .predcont .pred .row .main > .right {
+    flex-basis: 200px;
+    padding: 6px;
+  }
+  html[data-theme="1"] .predcont .pred .row .settings {
+    left: 0;
+    right: 0;
+    width: auto;
+    margin: 6px;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  html[data-theme="1"] .predcont .pred .row .settings .main {
+    margin: 0;
+    padding: 0;
+  }
+  html[data-theme="1"] .predcont .pred .row .settings .main > .row {
+    flex-direction: column;
+    align-items: stretch !important;
+  }
+  html[data-theme="1"] .predcont .pred .row .settings .main > .row .lefts,
+  html[data-theme="1"] .predcont .pred .row .settings .main > .row .rights {
+    flex-basis: auto;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */

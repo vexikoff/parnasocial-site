@@ -36,7 +36,6 @@ export default function App2() {
                 <a href="https://github.com/vexikoff/parnasocial-site">Site</a>
                 <a href="https://github.com/vexikoff/parnasocial">Windows</a>
                 <a href="https://github.com/vexikoff/parnasocial-mac-linux">Mac/Linux</a>
-                <p>MIT License</p>
             </div>
             <div className="spacer"/>
             <div className="column">

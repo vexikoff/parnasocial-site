@@ -64,6 +64,14 @@ body {
     overflow: hidden;
 }
 
+@media (max-width: 760px) {
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: clip !important;
+    }
+}
+
 .header {
     position: sticky;
     display: flex;

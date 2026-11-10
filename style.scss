@@ -428,3 +428,11 @@ body {
         }
     }
 }
+
+@media (max-width: 900px) {
+    html,
+    body {
+        max-width: 100%;
+        overflow-x: clip !important;
+    }
+}

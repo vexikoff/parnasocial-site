@@ -91,7 +91,6 @@ if (window.parnasocial) {
         '.awake',
         '.hardware',
         '.css',
-        '.outputdev',
         '.switchautoratio',
         '.watchfolders'
     ];

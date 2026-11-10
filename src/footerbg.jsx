@@ -51,6 +51,7 @@ export default function App2() {
                 <p>Developers:</p>
                 <a href="https://github.com/vexikoff">vexikoff</a>
                 <a href="https://qwen.ai/">Qwen</a>
+                <a href="https://github.com/copilot">Github Copilot</a>
                 <p>All rights reserved 2026</p>
             </div>
         </div>

@@ -175,7 +175,12 @@ body {
   flex-direction: row;
   gap: 4px;
 }
-.main .t1 .maitn .row button {
+.main .t1 .maitn .row a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  text-decoration: none;
   transition: 0.4s cubic-bezier(0.5, 0, 0.25, 1) all;
   border: none;
   box-shadow: inset 0 0 0 2px #009aff;
@@ -187,20 +192,26 @@ body {
   box-sizing: border-box;
   backdrop-filter: blur(16px);
 }
-.main .t1 .maitn .row button:hover {
+.main .t1 .maitn .row a:hover {
   box-shadow: inset 0 0 0 3px #009aff;
 }
-.main .t1 .maitn .row button.down {
+.main .t1 .maitn .row a.down {
   box-shadow: none;
   background-color: #009aff;
   color: white;
 }
-.main .t1 .maitn .row button.down:hover {
+.main .t1 .maitn .row a.down:hover {
   background-color: #29a8ff;
 }
 .main .t2 {
   position: relative;
   height: 100vh;
+  padding: 24px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 93;
 }
 .main .t2 .grad2 {
   position: absolute;
@@ -208,6 +219,32 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: -1;
+}
+.main .t2 .screenshots {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  width: 100%;
+  margin-top: 20px;
+}
+.main .t2 .screenshots img {
+  display: flex;
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: contain;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.7);
+  max-height: 278px;
+  transition: transform 0.2s cubic-bezier(0, 0, 0, 1);
+}
+.main .t2 .screenshots img:hover {
+  transform: scale(1.02);
+}
+@media (max-width: 480px) {
+  .main .t2 .screenshots {
+    grid-template-columns: 1fr;
+  }
 }
 
 .footer {

@@ -41,6 +41,7 @@
 }
 html {
   overflow-x: hidden !important;
+  overflow-y: auto !important;
 }
 
 * {
@@ -52,7 +53,6 @@ html {
 }
 
 body {
-  overflow-x: hidden !important;
   height: auto;
 }
 
@@ -60,36 +60,20 @@ body {
   position: sticky;
   top: 0;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 42px;
+  flex-direction: column;
+  height: 78px;
+  background: rgba(255, 255, 255, 0);
   box-sizing: border-box;
-  background: rgba(255, 255, 255, 0.85);
   z-index: 401;
   overflow: hidden;
-  -webkit-backdrop-filter: blur(32px);
-  backdrop-filter: blur(32px);
   transition: 0.4s cubic-bezier(0, 0, 0, 1) all;
-}
-.header .nav {
-  margin: 16px;
-  gap: 8px;
-}
-.header .nav button {
-  background: #cfecff;
-  font-size: 14px;
-  border: none;
-  border-radius: 4px;
-  height: 24px;
-  width: auto;
-  padding: 0 16px;
 }
 .header .iconp {
   padding: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  height: 22px;
+  height: 36px;
 }
 .header .iconp .icon {
   height: 20px;
@@ -102,6 +86,81 @@ body {
   padding-left: 4px;
   font-variation-settings: "wght" 700, "wdth" 100, "opsz" 12;
 }
+.header .topheader {
+  display: flex;
+  overflow: hidden;
+  height: 22px;
+  background-color: white;
+  width: 100%;
+}
+.header .topheader .right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  padding: 0 8px;
+}
+.header .topheader .left {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  padding: 0 8px;
+}
+.header .topheader a {
+  width: auto;
+  border-radius: 4px;
+  cursor: pointer !important;
+  padding-left: 4px;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.header .topheader a svg, .header .topheader a rect, .header .topheader a path {
+  cursor: pointer !important;
+}
+.header .topheader a:hover {
+  background-color: rgba(0, 148, 255, 0.1);
+}
+.header .nav {
+  margin: 16px;
+  gap: 8px;
+}
+.header .nav button {
+  background: #ffffff;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  height: 24px;
+  width: auto;
+  padding: 0 16px;
+}
+.header.scrolled .iconp {
+  height: 22px;
+}
+.header.scrolled {
+  background: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: blur(32px);
+  backdrop-filter: blur(32px);
+  height: 42px;
+}
+.header.scrolled .topheader {
+  display: none;
+}
+@starting-style {
+  .header.scrolled .topheader {
+    display: flex;
+  }
+}
+.header.scrolled .nav button {
+  display: none;
+}
 
 .filess {
   display: flex;
@@ -110,7 +169,7 @@ body {
   gap: 1px;
   border-radius: 4px;
   width: 128px;
-  top: 48px;
+  top: 70px;
   margin-left: 132px;
   margin-top: -8px;
   overflow: hidden;

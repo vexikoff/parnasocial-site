@@ -8,6 +8,8 @@ export default defineConfig({
     "process.env.NODE_ENV": JSON.stringify("production"),
   },
   build: {
+    outDir: ".",
+    emptyOutDir: false,
     lib: {
       entry: fileURLToPath(new URL("./src/main.jsx", import.meta.url)),
       name: "Gradient",

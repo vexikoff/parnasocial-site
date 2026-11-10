@@ -51,12 +51,8 @@ html {
   cursor: default;
 }
 
-html.highcontrast {
-  filter: contrast(1.5) !important;
-}
-
 body {
-  height: 200vh;
+  height: auto;
 }
 
 .header {
@@ -77,10 +73,8 @@ body {
 .header .nav {
   margin: 16px;
   gap: 8px;
-  -webkit-app-region: no-drag;
 }
 .header .nav button {
-  -webkit-app-region: no-drag;
   background: #cfecff;
   font-size: 14px;
   border: none;
@@ -114,7 +108,6 @@ body {
   flex-direction: column;
   gap: 1px;
   border-radius: 4px;
-  z-index: 13;
   width: 128px;
   top: 48px;
   margin-left: 132px;
@@ -205,6 +198,17 @@ body {
 .main .t1 .maitn .row button.down:hover {
   background-color: #29a8ff;
 }
+.main .t2 {
+  position: relative;
+  height: 100vh;
+}
+.main .t2 .grad2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
 
 .footer {
   position: relative;
@@ -215,6 +219,46 @@ body {
   margin-top: auto;
   height: 200px;
   color: black;
+}
+.footer .mcc {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 4px 16px;
+  box-sizing: border-box;
+}
+.footer .mcc .column {
+  flex: 1;
+  padding: 8px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  z-index: 99;
+  gap: 2px;
+}
+.footer .mcc .column p {
+  padding-left: 4px;
+}
+.footer .mcc .column p:hover {
+  background-color: rgba(0, 148, 255, 0.025);
+}
+.footer .mcc .column a {
+  text-decoration: none;
+  color: #005488;
+  width: auto;
+  border-radius: 4px;
+  cursor: pointer !important;
+  padding-left: 4px;
+}
+.footer .mcc .column a:hover {
+  background-color: rgba(0, 148, 255, 0.1);
+}
+.footer .spacer {
+  width: 1px;
+  height: 156px;
+  background-color: rgba(0, 0, 0, 0.25);
 }
 
 /*# sourceMappingURL=style.css.map */

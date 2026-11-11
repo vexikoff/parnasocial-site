@@ -1,3 +1,17 @@
+<!-- jusx -->
+<!--  -->
+<!-- vexikoff -->
+<!-- parnasocial -->
+<!--  -->
+<!-- jusx -->
+
+<!--ЕБАЛ НЕЙРОНКИ-->
+<!--ЕБАЛ НЕЙРОНКИ-->    <!--ЕБАЛ НЕЙРОНКИ-->    <!--ЕБАЛ НЕЙРОНКИ-->
+<!--ЕБАЛ НЕЙРОНКИ-->
+<!--ЕБАЛ НЕЙРОНКИ-->
+<!--ЕБАЛ НЕЙРОНКИ-->
+<!--ЕБАЛ НЕЙРОНКИ-->
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -34,10 +48,93 @@
 
     <link rel="stylesheet" href="style.css" />
 
+    <!--ЕБАЛ НЕЙРОНКИ-->
+    <!--ЕБАЛ НЕЙРОНКИ-->    <!--ЕБАЛ НЕЙРОНКИ-->    <!--ЕБАЛ НЕЙРОНКИ-->
+    <!--ЕБАЛ НЕЙРОНКИ-->
+    <!--ЕБАЛ НЕЙРОНКИ-->
+    <!--ЕБАЛ НЕЙРОНКИ-->
+    <!--ЕБАЛ НЕЙРОНКИ-->
+
+    <link rel="stylesheet" href="adapt.css">
+
+    <!-- ^^ скрипт созданной нейронкой потому что - говно -->
+
+    <!--Я зря полез в @media (max-width: 900px) — это было лишнее, признаю. И зря сделал .t3 с height: auto / min-height без прямого разрешения: это меняет высоту секции и всей страницы.
+    Фон меняется не потому, что я его правил. У тебя .grad абсолютный и растягивается по высоте контента. Когда .t3 стал выше/ниже, высота .main поменялась, и .grad визуально растянулся.
+    По твоему ТЗ «только мобилки и ничего лишнего» минимальный вариант должен быть такой:
+    не трогать 900px;
+    не менять высоту .t3;
+    в 560 поменять только ширину .maitn и размеры текста.
+    Но тут есть один вопрос: контент .t3 на мобилке должен оставаться в фиксированных 75vh, или секция может расти, если текст не влезает?
+    Если оставить фиксированную высоту — фон не поедет, но длинный контент может обрезаться. Если разрешить секции расти — контент влезет, но фон будет растягиваться вместе с секцией.
+    Скажи, какой вариант нужен: фиксированные 75vh на мобилке или авто-высота. После этого кину полный файл и трону только .t3 в мобилке.-->
+
     <title>Parnasocial</title>
 </head>
 <body>
-    <div class="grad"></div>
+<!--    <div class="yaebalneironki">-->
+<!--    ААА, теперь понял, почему тебе нужен scaleX(3). Он растягивает градиент и, судя по canvas { width: 33.4% }, это сделано намеренно.
+ЕБАЛ НЕЙРОНКИ АААААААААААА
+Не убирай scaleX(3). Сделай отдельную обёртку, которая будет обрезать только выходящий за экран градиент.
+1. Добавь обёртку
+<div className="grad-clip">
+    <div className="grad">
+        {/* твой canvas и остальное содержимое */}
+    </div>
+</div>
+
+
+2. CSS обёртки
+.grad-clip {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+3. Сам .grad оставь практически без изменений
+.grad {
+    position: absolute;
+    display: flex;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background:
+        radial-gradient(circle at calc(0% + 64px) 0px, #cfecff 0%, transparent 20%),
+        radial-gradient(circle at calc(33% - 64px) 100%, #cfecff 0%, #ffffff 20%);
+    transform: scaleX(3);
+    transform-origin: top left;
+
+    canvas {
+        width: 33.4% !important;
+    }
+}
+
+
+Что получится:
+- scaleX(3) продолжит работать.
+- Градиент не потеряет своё растяжение.
+- Canvas останется прежнего размера относительно растянутого элемента.
+- Всё, что выходит за границы экрана, обрежется именно на уровне фоновой обёртки.
+- Остальная страница не будет обрезаться.
+То есть мы ограничиваем не твой сайт, а исключительно фон. Именно это тебе и нужно.   срать гпт блять имбицил 30 айкью
+
+отменяется, нейронка тупая даже я умнее
+
+НЕЙРОНКИ ГОВНО ГОВНО ДАЖ С ПРИСМОТРОМ ГОВНО ЧАТГПТ ГОВНО
+без негатива, мое мнение
+
+QWEN X COPILOT МЯСО
+-->
+    <div class="grad">
+
+<!--        </div>-->
+    </div>
     <header class="header">
         <div class="topheader">
             <a class="right" href="http://github.com/vexikoff/parnasocial">
@@ -70,6 +167,28 @@
                 <div class="row">
                     <a href="/web" class="sourc">Try in web</a>
                     <a href="https://github.com/vexikoff/parnasocial/releases/" target="_blank" class="down">Download</a>
+                </div>
+            </div>
+        </div>
+        <div class="t3">
+            <div class="grad3"></div>
+            <div class="maitn">
+                <h3>
+                    Why Parnasocial?
+                </h3>
+                <div class="blockxx">
+                    <p>Parnasocial combines a clean interface with a wide range of features that let you make your media experience your own. <br>
+                        <br>
+                        Browse your active media directory, easily move tracks into your playlist, and keep everything organized in one place. <br>
+                        Customize your experience with themes, audio settings, playback options, hardware acceleration and more. <br>
+                        <br>
+                        From crossfade and Bass Boost to Discord Rich Presence and custom CSS, Parnasocial gives you control without overwhelming you with complexity. <br>
+                    </p>
+                </div>
+                <div class="row">
+                    <p class="l">Your media</p>
+                    <p>Your playlist</p>
+                    <p class="r">Your experience</p>
                 </div>
             </div>
         </div>
@@ -118,5 +237,24 @@
     <script src="header.js"></script>
     <script src="img.js"></script>
     <script src="1gradient.js"></script>
+    <!--ЕБАЛ НЕЙРОНКИ-->
+    <!--ЕБАЛ НЕЙРОНКИ-->
+    <!--ЕБАЛ НЕЙРОНКИ-->
+    <!--ЕБАЛ НЕЙРОНКИ-->
+    <!--ЕБАЛ НЕЙРОНКИ-->
 </body>
 </html>
+
+<!--ЕБАЛ НЕЙРОНКИ-->
+<!--ЕБАЛ НЕЙРОНКИ-->    <!--ЕБАЛ НЕЙРОНКИ-->    <!--ЕБАЛ НЕЙРОНКИ-->
+<!--ЕБАЛ НЕЙРОНКИ-->
+<!--ЕБАЛ НЕЙРОНКИ-->
+<!--ЕБАЛ НЕЙРОНКИ-->
+<!--ЕБАЛ НЕЙРОНКИ-->
+
+<!-- jusx -->
+<!--  -->
+<!-- vexikoff -->
+<!-- parnasocial -->
+<!--  -->
+<!-- jusx -->

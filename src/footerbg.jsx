@@ -33,16 +33,17 @@ export default function App2() {
             />
             <div className="column">
                 <p>Pages:</p>
-                <a href="https://github.com/vexikoff/parnasocial-site">Site</a>
-                <a href="https://github.com/vexikoff/parnasocial">Windows</a>
-                <a href="https://github.com/vexikoff/parnasocial-mac-linux">Mac/Linux</a>
+                <a href="https://parnasocial.vexikoff.xyz/">Home</a>
+                <a href="https://parnasocial.vexikoff.xyz/web">Try in web</a>
+                <a href="https://github.com/vexikoff/parnasocial/releases">Download for Windows</a>
+                <a href="https://github.com/vexikoff/parnasocial-mac-linux/releases">Download for Mac/Linux</a>
             </div>
             <div className="spacer"/>
             <div className="column">
                 <p>Sources:</p>
-                <a href="https://parnasocial.vexikoff.xyz/web">Try in web</a>
-                <a href="https://github.com/vexikoff/parnasocial/releases">Download for Windows</a>
-                <a href="https://github.com/vexikoff/parnasocial-mac-linux/releases">Download for Mac/Linux</a>
+                <a href="https://github.com/vexikoff/parnasocial-site">Site</a>
+                <a href="https://github.com/vexikoff/parnasocial">Windows</a>
+                <a href="https://github.com/vexikoff/parnasocial-mac-linux">Mac/Linux</a>
                 <p>MIT License</p>
             </div>
             <div className="spacer"/>

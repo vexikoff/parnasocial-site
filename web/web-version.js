@@ -29,15 +29,17 @@ if (window.parnasocial) {
     const fileMenu = document.getElementById('files');
     const recentMenu = document.querySelector('.recentt');
     const logo = document.querySelector('.header .iconp');
+    document.querySelector('.main > .left')?.remove();
+
     const fileInput = document.createElement('input');
     fileInput.type = 'file';
-    fileInput.accept = 'audio/*,video/mp4,video/webm,video/ogg';
+    fileInput.accept = 'audio/*,video/*';
     fileInput.multiple = true;
     fileInput.hidden = true;
     document.body.appendChild(fileInput);
 
-    fileMenu?.classList.add('hidden');
-    recentMenu?.classList.add('hidden');
+    fileMenu?.remove();
+    recentMenu?.remove();
 
     fileButton?.addEventListener('click', () => {
         showFullVersionNotice('The File menu and playlist saving');
@@ -74,58 +76,6 @@ if (window.parnasocial) {
         event.stopPropagation();
         window.parnasocialWeb?.addFiles(files);
     });
-
-    const videoModeButton = document.getElementById('videomode');
-    videoModeButton?.addEventListener('click', (event) => {
-        event.preventDefault();
-        event.stopImmediatePropagation();
-        showFullVersionNotice('Fullscreen video mode');
-    }, true);
-
-    const lockedSettings = [
-        '.switchsss',
-        '.switchccc',
-        '.switchcccc',
-        '.switchcc',
-        '.rpc',
-        '.awake',
-        '.hardware',
-        '.css',
-        '.switchautoratio',
-        '.watchfolders'
-    ];
-
-    for (const selector of lockedSettings) {
-        const control = document.querySelector(selector);
-        const row = control?.closest('.row');
-        if (!control || !row) {
-            continue;
-        }
-
-        const input = control.matches('input, select') ? control : control.querySelector('input');
-        if (input) {
-            input.disabled = true;
-        }
-
-        row.classList.add('web-locked');
-        const note = document.createElement('span');
-        note.className = 'web-lock-note';
-        note.textContent = 'Full version: ';
-
-        const link = document.createElement('a');
-        link.href = releaseUrl;
-        link.target = '_blank';
-        link.rel = 'noopener noreferrer';
-        link.textContent = 'download';
-        note.appendChild(link);
-        row.appendChild(note);
-    }
-
-    const savePlaylistSwitch = document.querySelector('.switchccc input');
-    if (savePlaylistSwitch) {
-        savePlaylistSwitch.checked = false;
-        savePlaylistSwitch.disabled = true;
-    }
 
     notice.addEventListener('click', () => notice.classList.remove('visible'));
 }

@@ -124,7 +124,7 @@ function settingValue(key, fallback) {
 }
 
 function isSaveOn() {
-    return settingValue('savePlaylist', true) === true;
+    return !!window.parnasocial && settingValue('savePlaylist', false) === true;
 }
 
 function isCrossfadeOn() {

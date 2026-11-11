@@ -1,5 +1,25 @@
 const SETTINGS_KEY = 'parnasocial:settings';
 const isElectronApp = !!window.parnasocial;
+const electronOnlySettings = new Set([
+    'startWithWindows',
+    'savePlaylist',
+    'keepInTray',
+    'discordRpc',
+    'stayAwake',
+    'watchFolders',
+    'hardwareAccel',
+    'outputDevice'
+]);
+const webSettingDefaults = {
+    startWithWindows: false,
+    savePlaylist: false,
+    keepInTray: false,
+    discordRpc: false,
+    stayAwake: false,
+    watchFolders: false,
+    hardwareAccel: true,
+    outputDevice: ''
+};
 
 const settingsDefaults = {
     startWithWindows: false,
@@ -30,6 +50,10 @@ try {
         const parsedSettings = JSON.parse(settingsRaw);
 
         for (const key of Object.keys(settingsDefaults)) {
+            if (!isElectronApp && electronOnlySettings.has(key)) {
+                continue;
+            }
+
             if (typeof parsedSettings[key] === typeof settingsDefaults[key]) {
                 settingsStore[key] = parsedSettings[key];
             }
@@ -43,7 +67,22 @@ try {
 }
 
 if (!isElectronApp) {
-    settingsStore.savePlaylist = false;
+    Object.assign(settingsStore, webSettingDefaults);
+}
+
+if (!isElectronApp) {
+    for (const selector of [
+        '.switchsss',
+        '.switchccc',
+        '.switchcccc',
+        '.rpc',
+        '.awake',
+        '.hardware',
+        '.watchfolders',
+        '#outputdev'
+    ]) {
+        document.querySelector(selector)?.closest('.row')?.remove();
+    }
 }
 
 function persistSettings() {
@@ -54,9 +93,11 @@ function persistSettings() {
 }
 
 window.pSettings = {
-    get: (key) => settingsStore[key],
+    get: (key) => !isElectronApp && electronOnlySettings.has(key)
+        ? webSettingDefaults[key]
+        : settingsStore[key],
     set: (key, value) => {
-        if (!(key in settingsStore)) {
+        if (!(key in settingsStore) || (!isElectronApp && electronOnlySettings.has(key))) {
             return;
         }
 

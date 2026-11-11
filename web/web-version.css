@@ -6,15 +6,6 @@
     margin-right: 0;
 }
 
-.web-version .filess,
-.web-version .recentt {
-    display: none !important;
-}
-
-.web-version .main > .left {
-    display: none;
-}
-
 .web-version .main > .right {
     order: 0;
     flex: 0 0 clamp(190px, 24vw, 320px);
@@ -31,27 +22,8 @@
     justify-content: flex-end;
 }
 
-.web-version #repeatplaylist,
-.web-version #shuffleplaylist,
 .web-version #addfolderplaylist {
     display: none;
-}
-
-.web-version .settings .web-locked {
-    flex-wrap: wrap;
-    opacity: 0.48;
-    filter: grayscale(1);
-}
-
-.web-version .settings .web-locked input,
-.web-version .settings .web-locked select {
-    cursor: not-allowed;
-}
-
-.web-version .web-lock-note {
-    font-size: 11px !important;
-    white-space: nowrap;
-    opacity: 0.8;
 }
 
 .web-version-notice {
@@ -72,8 +44,7 @@
     gap: 4px;
 }
 
-.web-version-notice a,
-.web-lock-note a {
+.web-version-notice a {
     color: #007cc5;
     text-decoration: underline;
 }
